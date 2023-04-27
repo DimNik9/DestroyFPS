@@ -2,14 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// Thanks for downloading my custom projectiles script! :D
-/// Feel free to use it in any project you like!
-/// 
-/// The code is fully commented but if you still have any questions
-/// don't hesitate to write a yt comment
-/// or use the #coding-problems channel of my discord server
-/// 
-/// Dave
+
 
 public class CustomProjectiles : MonoBehaviour
 {
@@ -295,7 +288,7 @@ public class CustomProjectiles : MonoBehaviour
         if (isVanished && !canStillExplodeWhenVanished) return;
 
         //Colliding with other bullet doesn't count
-        ///if (collision.collider.CompareTag("Bullet")) return;
+        if (collision.collider.CompareTag("Bullet")) return;
 
         //Stick to objects, only if not already sticking and switchPlaces is turned off (bug fixing)
         if (stickToObjects && !sticking && !switchPlaces) 
@@ -547,39 +540,5 @@ public class CustomProjectiles : MonoBehaviour
     }
 
     #endregion
-
-    /// The setters need to be here that the slider Ui works, 
-    /// if you don't need the ingame sliders anyway, just delete them :D
-    #region Setters
-
-    public void SetBounciness(float v)
-    {
-        bounciness = v;
-    }
-    public void SetGravity(float v)
-    {
-        if (v == 1) useGravity = true;
-        else useGravity = false;
-    }
-    public void SetMaxCollisions(float v)
-    {
-        int _v = Mathf.RoundToInt(v);
-        maxCollisions = _v;
-    }
-    public void SetMaxLifetime(float v)
-    {
-        int _v = Mathf.RoundToInt(v);
-        maxLifetime = _v;
-    }
-    public void SetExplosionRange(float v)
-    {
-        explosionRange = v;
-    }
-    public void SetExplosionDamage(float v)
-    {
-        int _v = Mathf.RoundToInt(v);
-        explosionDamage = _v;
-    }
-
-    #endregion
+  
 }
